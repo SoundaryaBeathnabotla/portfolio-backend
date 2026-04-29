@@ -1,0 +1,112 @@
+{
+  "portfolios": [
+    {
+      "portfolio_id": "balanced_family_office_v1",
+      "name": "Balanced Family Office",
+      "buckets": [
+        {
+          "bucket_id": "broad_market_equities",
+          "name": "Broad Market Equities",
+          "target_weight": 0.45,
+          "symbols": ["VTI", "SPY", "IVV"]
+        },
+        {
+          "bucket_id": "dividend_low_vol_equities",
+          "name": "Dividend / Low-Vol Equities",
+          "target_weight": 0.15,
+          "symbols": ["VIG", "SCHD", "USMV"]
+        },
+        {
+          "bucket_id": "real_estate_reits",
+          "name": "Real Estate (REITs)",
+          "target_weight": 0.15,
+          "symbols": ["VNQ", "SCHH"]
+        },
+        {
+          "bucket_id": "gold_commodities",
+          "name": "Gold / Commodities",
+          "target_weight": 0.10,
+          "symbols": ["GLD", "IAU"]
+        },
+        {
+          "bucket_id": "cash_cash_like",
+          "name": "Cash / Cash-like",
+          "target_weight": 0.15,
+          "symbols": ["BIL", "SHV", "SGOV"]
+        }
+      ]
+    },
+    {
+      "portfolio_id": "growth_alternatives_v1",
+      "name": "Growth + Alternatives",
+      "buckets": [
+        {
+          "bucket_id": "growth_equities",
+          "name": "Growth Equities",
+          "target_weight": 0.50,
+          "symbols": ["QQQ", "VUG", "SCHG"]
+        },
+        {
+          "bucket_id": "broad_market_equities",
+          "name": "Broad Market Equities",
+          "target_weight": 0.20,
+          "symbols": ["VTI", "SPY"]
+        },
+        {
+          "bucket_id": "alternatives_public_proxies",
+          "name": "Alternatives (public proxies)",
+          "target_weight": 0.15,
+          "symbols": ["VNQ", "IGF", "PAVE"]
+        },
+        {
+          "bucket_id": "gold_commodities",
+          "name": "Gold / Commodities",
+          "target_weight": 0.05,
+          "symbols": ["GLD", "IAU"]
+        },
+        {
+          "bucket_id": "cash_cash_like",
+          "name": "Cash / Cash-like",
+          "target_weight": 0.10,
+          "symbols": ["BIL", "SGOV"]
+        }
+      ]
+    },
+    {
+      "portfolio_id": "real_asset_preservation_v1",
+      "name": "Real Asset Preservation",
+      "buckets": [
+        {
+          "bucket_id": "real_estate_reits",
+          "name": "Real Estate (REITs)",
+          "target_weight": 0.35,
+          "symbols": ["VNQ", "SCHH"]
+        },
+        {
+          "bucket_id": "gold_commodities",
+          "name": "Gold / Commodities",
+          "target_weight": 0.25,
+          "symbols": ["GLD", "IAU"]
+        },
+        {
+          "bucket_id": "broad_market_equities",
+          "name": "Broad Market Equities",
+          "target_weight": 0.20,
+          "symbols": ["VTI", "SPY"]
+        },
+        {
+          "bucket_id": "infrastructure_real_economy_assets",
+          "name": "Infrastructure / Real-economy assets",
+          "target_weight": 0.10,
+          "symbols": ["IGF", "PAVE"]
+        },
+        {
+          "bucket_id": "cash_cash_like",
+          "name": "Cash / Cash-like",
+          "target_weight": 0.10,
+          "symbols": ["BIL", "SHV", "SGOV"]
+        }
+      ]
+    }
+  ]
+}
