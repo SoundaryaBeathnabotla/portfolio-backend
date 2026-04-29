@@ -1,0 +1,95 @@
+{
+  "as_of_date": "2026-04-29",
+  "portfolios": {
+    "balanced_family_office_v1": {
+      "portfolio_return": -0.003367324099665187,
+      "buckets": [
+        {
+          "bucket_id": "broad_market_equities",
+          "weight": 0.45,
+          "bucket_return": -0.003585384655694579
+        },
+        {
+          "bucket_id": "dividend_low_vol_equities",
+          "weight": 0.15,
+          "bucket_return": 0.0007540340507125783
+        },
+        {
+          "bucket_id": "real_estate_reits",
+          "weight": 0.15,
+          "bucket_return": -0.005852189379794814
+        },
+        {
+          "bucket_id": "gold_commodities",
+          "weight": 0.1,
+          "bucket_return": -0.009944681932137434
+        },
+        {
+          "bucket_id": "cash_cash_like",
+          "weight": 0.15,
+          "bucket_return": 3.526991982301849e-05
+        }
+      ]
+    },
+    "growth_alternatives_v1": {
+      "portfolio_return": -0.004578735521734844,
+      "buckets": [
+        {
+          "bucket_id": "growth_equities",
+          "weight": 0.5,
+          "bucket_return": -0.00386804934878456
+        },
+        {
+          "bucket_id": "broad_market_equities",
+          "weight": 0.2,
+          "bucket_return": -0.003585384655694579
+        },
+        {
+          "bucket_id": "alternatives_public_proxies",
+          "weight": 0.15,
+          "bucket_return": -0.009559512077193855
+        },
+        {
+          "bucket_id": "gold_commodities",
+          "weight": 0.05,
+          "bucket_return": -0.009944681932137434
+        },
+        {
+          "bucket_id": "cash_cash_like",
+          "weight": 0.1,
+          "bucket_return": 3.526991982301849e-05
+        }
+      ]
+    },
+    "real_asset_preservation_v1": {
+      "portfolio_return": -0.006355201551183576,
+      "buckets": [
+        {
+          "bucket_id": "real_estate_reits",
+          "weight": 0.35,
+          "bucket_return": -0.005852189379794814
+        },
+        {
+          "bucket_id": "gold_commodities",
+          "weight": 0.25,
+          "bucket_return": -0.009944681932137434
+        },
+        {
+          "bucket_id": "broad_market_equities",
+          "weight": 0.2,
+          "bucket_return": -0.003585384655694579
+        },
+        {
+          "bucket_id": "infrastructure_real_economy_assets",
+          "weight": 0.1,
+          "bucket_return": -0.011072148460644193
+        },
+        {
+          "bucket_id": "cash_cash_like",
+          "weight": 0.1,
+          "bucket_return": 3.526991982301849e-05
+        }
+      ]
+    }
+  }
+}
