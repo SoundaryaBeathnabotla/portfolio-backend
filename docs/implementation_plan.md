@@ -59,8 +59,8 @@ Output:
   "portfolio_id": "balanced_family_office_v1",
   "portfolio_return": 0.0021,
   "buckets": []
-}
----
+}```
+--- 
 
 ## Step 4: Build analytics pipeline
 The pipeline will:
