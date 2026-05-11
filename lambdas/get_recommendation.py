@@ -1,27 +1,19 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
 import json
 import boto3
 
-app = FastAPI()
-
-# Initialize S3 client
 s3 = boto3.client("s3")
 
-# S3 bucket name
 BUCKET_NAME = "aaronbux-portfolio-backend-dev"
 
+PORTFOLIO_CONFIG_KEY = "config/portfolio_config.json"
+PORTFOLIO_ANALYTICS_KEY = "portfolio_analytics/portfolio_analytics.json"
 
-class RecommendationRequest(BaseModel):
-    risk_level: str
 
-
-# Load portfolio config from S3
 def load_portfolio_config():
 
     response = s3.get_object(
         Bucket=BUCKET_NAME,
-        Key="config/portfolio_config.json"
+        Key=PORTFOLIO_CONFIG_KEY
     )
 
     data = json.loads(
@@ -31,12 +23,11 @@ def load_portfolio_config():
     return data
 
 
-# Load analytics from S3
 def load_portfolio_analytics():
 
     response = s3.get_object(
         Bucket=BUCKET_NAME,
-        Key="portfolio_analytics/portfolio_analytics.json"
+        Key=PORTFOLIO_ANALYTICS_KEY
     )
 
     data = json.loads(
@@ -46,31 +37,23 @@ def load_portfolio_analytics():
     return data
 
 
-@app.get("/")
-def home():
-    return {
-        "message": "AaronBux Portfolio Recommendation API"
-    }
+def lambda_handler(event, context):
 
+    body = json.loads(event["body"])
 
-@app.post("/recommendation")
-def get_recommendation(request: RecommendationRequest):
+    risk_level = body["risk_level"]
 
     portfolio_config = load_portfolio_config()
+
     portfolio_analytics = load_portfolio_analytics()
 
     risk_mapping = {
-        "low": "conservative_income_v1",
+        "low": "income_stability_v1",
         "medium": "balanced_family_office_v1",
-        "high": "growth_aggressive_v1"
+        "high": "growth_accelerated_v1"
     }
 
-    portfolio_id = risk_mapping.get(request.risk_level.lower())
-
-    if not portfolio_id:
-        return {
-            "error": "Invalid risk level"
-        }
+    portfolio_id = risk_mapping.get(risk_level)
 
     selected_portfolio = None
 
@@ -81,8 +64,12 @@ def get_recommendation(request: RecommendationRequest):
             break
 
     if not selected_portfolio:
+
         return {
-            "error": "Portfolio not found"
+            "statusCode": 404,
+            "body": json.dumps({
+                "error": "Portfolio not found"
+            })
         }
 
     analytics = portfolio_analytics.get(
@@ -90,7 +77,28 @@ def get_recommendation(request: RecommendationRequest):
         {}
     )
 
-    return {
+    response = {
         "recommended_portfolio": selected_portfolio,
         "analytics": analytics
     }
+
+    return {
+        "statusCode": 200,
+        "body": json.dumps(response)
+    }
+
+
+if __name__ == "__main__":
+
+    test_event = {
+        "body": json.dumps({
+            "risk_level": "medium"
+        })
+    }
+
+    result = lambda_handler(
+        test_event,
+        None
+    )
+
+    print(json.dumps(result, indent=2))
